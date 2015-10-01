@@ -38,6 +38,7 @@
     <table id="listcalendar" class="table table-bordered table-hover" cellspacing="0" width="100%">
         <thead>
         <tr>
+            <th><?php echo t('ID') ?></th>
             <th><?php echo t('Calendar title') ?></th>
             <th><?php echo t('Events in calendar') ?></th>
             <th><?php echo t('Options') ?></th>
@@ -46,6 +47,7 @@
 
         <tfoot>
         <tr>
+            <th><?php echo t('ID') ?></th>
             <th><?php echo t('Calendar title') ?></th>
             <th><?php echo t('Events in calendar') ?></th>
             <th><?php echo t('Options') ?></th>
@@ -55,9 +57,13 @@
         <tbody>
         <?php foreach ($calendars as $cal): ?>
             <tr>
+                <td>
+                    <?php echo $cal['calendarID']; ?>
+                </td>
                 <td><input class="calendarID" type="hidden"
                            value="<?php echo $cal['calendarID']; ?>"><?php echo $cal['title']; ?>
                 </td>
+
                 <td>
                     <?php if ($cal['total_events'] > 0): ?>
                         <span class="badge badge-important"><?php echo $cal['total_events']; ?></span>
@@ -71,6 +77,8 @@
                        class="btn btn-success"><?php echo t('Show events') ?></a>
                     <a href="<?php echo View::url('dashboard/event_calendar/calendar/update/' . $cal['calendarID']) ?>"
                        class="btn btn-warning edit"><?php echo t('Edit') ?></a>
+                    <a href="<?php echo View::url('dashboard/event_calendar/list_event/clearEvents/' . $cal['calendarID']) ?>"
+                       class="btn btn-info edit"><?php echo t('Remove all events') ?></a>
                     <button class="btn btn-danger delete"><?php echo t('Delete') ?></button>
                 </td>
             </tr>

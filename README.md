@@ -25,10 +25,24 @@ If you choose "One day with time" event you can resize event for more days.
 
 Version
 ----
-3.2
+3.3.3
 
 Changelog
 ----
+3.3.3
+Add ICS calendar ; To call calendar use link:
+http://DOMAIN/index.php/tools/packages/dsEventCalendar/event_calendar/ical.php?id=1
+where id is calendar ID (check on list of calendars).
+
+3.3.2
+Add scroll options for date / time picker in dashboard
+
+3.3.1
+Remove events from calendar
+
+3.3
+Filter calendar events by single type
+
 3.2
 Support language each block of calendar
 
